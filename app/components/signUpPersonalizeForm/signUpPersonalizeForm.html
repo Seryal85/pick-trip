@@ -1,0 +1,159 @@
+	<form class ="form-sign-up-2" name = "signUpForm2" role="sign-up-2" ng-submit = "submit(signUpForm2)">
+
+	<div class="row row-caption">
+		<div class="col-xs-4 reset-left">
+			<div class="form-group">
+			<a ui-sref = "sign-up" class="btn btn-back"><i class ="fa fa-arrow-left fa-lg"></i>&nbsp; &nbsp;Back</a>
+			</div>
+		</div>
+		<div class="col-xs-8">
+			<div class="form-group caption">
+			<span>Personalize Your Adventure Account</span>
+			</div>
+		</div>
+	</div>	
+	<div class="custom row">
+		<div class="col-xs-2">
+		<img src="img/avatar.png" alt="avatar">
+		<div class="img-group">
+		<i class="fa fa-cloud-upload fa-lg  fa-inverse cloud"></i><br>
+		<a href="#">Upload Avatar</a>
+		</div>
+		</div>
+		 <div class="col-xs-4">
+		 	<div class="form-group">
+		 	<label for="name">Name</label>
+			<input type="text" class="form-control input-lg" id="name" placeholder="Name">
+			</div>
+			<div class="form-group">
+			<label for="date">Birth Date</label>
+			<div class="row">
+			 <div class="col-xs-3">
+			<input type="text" class="form-control input-lg" id="date" placeholder="DD" maxlength="2">
+			</div>
+			<div class="col-xs-6 reset-left">
+			<select class="form-control input-lg" id="sel1" placeholder="Month">
+			<option selected disabled>Month</option>
+			<option>January</option>
+			<option>February</option>
+			</select>
+			</div>
+			<div class="col-xs-3 reset-left">
+			<input type="text" class="form-control input-lg" id="date" placeholder="YYYY" maxlength="4">
+			</div>
+			</div>
+			</div>
+		 </div>
+		 <div class="col-xs-3">
+		 	<div class="form-group">
+		 	 <label for="last-name">Last Name</label>
+		 	 <input type="text" class="form-control input-lg" id="last-name" placeholder="Last Name">
+		 	</div>
+		 	<div class="form-group">
+		 	 <label for="location">Location</label>
+		 	 <input type="text" class="form-control input-lg" id="location" placeholder="Location">
+		 	</div>
+		 </div>
+		 <div class="col-xs-3">
+				<label for="gender">Gender</label><br>
+		<div class="btn-group" data-toggle="buttons">
+        <label class="btn active">
+          <input type="radio" name='gender2' checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Male</span>
+        </label>
+        <label class="btn">
+          <input type="radio" name='gender2'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Female</span>
+        </label>
+      </div>
+	</div>
+	</div>
+	
+	<div class="custom row">
+	
+	<span class="caption-interest">Fill in Your Traveler Info</span>
+    
+    <div class="row interest">
+		<div class="col-xs-3">
+		<div class="form-group">
+			<label for = "area-of-interest">Areas of interest</label>
+			<select class="form-control input-lg" id="area-of-interest">
+			<option disabled>Select one more Area...</option>
+			<option selected>Fishing</option>
+			</select>
+		</div>
+	</div>
+		<div class="col-xs-6">
+			<div class="form-group">
+				<div data-toggle="buttons">
+			    <label class="btn btn-interest">
+			      <input type="checkbox" name='email1'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Angling
+			    </label>
+			    <label class="btn btn-interest active">
+			      <input type="checkbox" name='email2' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Angling</span>
+			    </label>
+			    <label class="btn btn-interest">
+			      <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Angling</span>
+			    </label>
+			    <label class="btn btn-interest">
+			      <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Angling</span>
+			    </label>
+			  </div>	
+			</div>	
+		</div>
+		<div class="col-xs-3 clear-padding">
+			<div class="form-group">
+			<div class="input-group custom-interest">
+		      <input type="text" class="form-control input-lg custom-input-interest" placeholder="What is your technique?">
+		      <span class="input-group-btn">
+		        <button class="btn btn-secondary btn-lg custom-add" type="button">Add</button>
+		      </span>
+		    </div>
+		    </div>
+		</div>
+	</div>
+
+		<div class="row interest">
+			<div class="col-xs-3">
+				<div class="form-group">
+<!-- 					<label for = "area-of-interest">Areas of interest</label> -->
+					<select class="form-control input-lg" id="area-of-interest">
+					<option disabled selected>Select one more Area...</option>
+					<option>Fishing</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-6">
+		
+			</div>
+			<div class="col-xs-3 clear-padding">
+			
+			</div>
+		</div>
+	
+	</div>
+
+		<div class="custom row">
+	
+	<span class="caption-interest">Fill in Your Provider Info</span>
+    
+    <div class="row interest">
+		<div class="col-xs-3">
+		<div class="form-group">
+			<label for = "area-of-interest">Areas of interest</label>
+			<select class="form-control input-lg" id="area-of-interest">
+			<option disabled selected>Select Area...</option>	
+			</select>
+		</div>
+	</div>
+		<div class="col-xs-6">
+				
+		</div>
+		<div class="col-xs-3 clear-padding">
+			
+		</div>
+	</div>
+</div>
+
+	<div class="custom row button-sign-in">
+	<button type="submit" class="btn btn-block btn-lg login">Sign Up and Start</button>	
+	</div>
+	</form>

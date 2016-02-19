@@ -1,0 +1,51 @@
+<form class ="form-login" name = "loginForm" role="loginning" ng-submit = "login()" method="post">
+	<div class="row">
+	<h3 class="form-login-heading">Login and start your adventure!</h3>
+	<div class="form-group">
+		<label for="usrname">Username or Email</label>
+		<input type="text" class="form-control input-lg" id="usrname" name = "name" placeholder="Username or Email" ng-model="user.name" required autofocus>
+	</div>
+	<div class="form-group forgot">
+		<label for="psw">Password</label>
+		<input type="password" class="form-control input-lg" id="psw" name="password" placeholder="Password" ng-model="user.password" required>
+		<span><a href="#">Forgot?</a></span>
+	</div>
+	<div class="form-group">
+		<div  class = "strike">
+			<span>or</span>
+		</div>
+	</div>
+	<div class="form-group" align="center">
+		<p class="social">
+			<!--Facebook icon-->
+			<a href target="_blank" ng-click="authenticate('facebook')">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x"></i>
+				</span>
+			</a>&nbsp; &nbsp; &nbsp;
+			<!--Twitter icon-->
+			<a href target="_blank" ng-click="authenticate('twitter')">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</a>&nbsp; &nbsp;&nbsp;
+			<!--Google+ icon-->
+			<a href target="_blank" ng-click="authenticate('google')">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-google-plus fa-stack-1x"></i>
+				</span>
+			</a>
+		</p>
+	</div>
+	<div align="center">
+			    <label class="pointer">
+			      <input type="checkbox" style="display:none;" ng-disabled="loginForm.$invalid" ng-model="user.rememberme"><i class="fa fa-square-o fa-1-5x fa-v-align"></i><i class="fa fa-check-square-o fa-1-5x fa-v-align"></i><span class="log-check-font"> &nbsp; Remember me next time</span>
+			    </label>
+	</div>
+</div>
+	<button type="submit" class="btn btn-block btn-lg login" ng-disabled="loginForm.$invalid">Login</button>
+</form>
+

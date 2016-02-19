@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome.css">
+	<!--inject:css-->
+	<!--endinject-->
+</head>
+<body>
+
+<div nav-bar></div>
+<!-- <nav class="navbar navbar-default navbar-peak-a-trip">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a ui-sref="home" class="navbar-brand logo">Peak A Trip</a>
+		</div>
+	</div>
+	<div ui-view="navigate"></div>
+</nav> -->
+
+<div class="container">
+	 <div ui-view = "form"></div>
+</div>
+
+<div footer-bar></div>
+	<!--bower:js-->
+	<!--endinject-->
+	<!--inject:js-->
+	<!--endinject-->
+</body>
+</html>

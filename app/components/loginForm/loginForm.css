@@ -1,0 +1,103 @@
+.form-login .form-login-heading {
+	text-align: center;
+	padding-bottom: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 2px;
+}
+
+.strike {
+	display: block;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap; 
+}
+
+.strike > span {
+	position: relative;
+	display: inline-block;
+	font-size: 18px;
+	color: #cbcbcb;
+	margin-top: 15px;
+}
+
+.strike > span:before,
+.strike > span:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 9999px;
+	height: 1px;
+	background:#cbcbcb;
+}
+
+.strike > span:before {
+	right: 100%;
+	margin-right: 15px;
+}
+
+.strike > span:after {
+	left: 100%;
+	margin-left: 15px;
+}
+
+.form-login .forgot{
+    position: relative;
+}
+
+.form-login .forgot span{
+	position: absolute;
+    top: 39px;
+    right: 0;
+    padding-right: 10px;
+}
+
+.form-login a{
+	color: #60beb3;
+	text-decoration: none;
+}
+.form-login .checkbox{
+	color: #cbcbcb;
+}
+
+.form-login .btn{
+	background: #60beb3;
+	color: white;
+}
+
+.form-login .social p{
+	font-size: larger;
+}
+
+.form-login .sign-in .social a{
+	color:#60beb3;
+	font-size: 16px;
+}
+.form-login{
+ background-color: white;
+ width: 51%;
+ margin: 30px auto;
+}
+.form-login .row{
+	padding: 20px 100px;
+}
+.form-login .btn.btn-block.btn-lg.login{
+	border-radius: 0 0 2px 2px;
+}
+.form-login label{
+	font-weight: normal;
+    color: #9d9d9d;
+    font-size: 12px;
+}
+.fa-1-5x{
+	font-size: 1.5em;
+}
+.fa-v-align{
+	vertical-align: text-bottom;
+}
+.log-check-font{
+	font-size: 1.2em;
+}
+.pointer{
+	cursor: pointer;
+}

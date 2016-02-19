@@ -1,0 +1,16 @@
+/*see loginForm.css*/
+.password-strength-indicator{
+	width: 100%;
+	min-height: 2px;
+}
+.password-strength-indicator div{
+	width: 23%;
+	min-height: 2px;
+	background-color: #dce1e3;
+	display: inline-block;
+	margin-right: 2%;
+}
+.password-strength-indicator div:last-child{
+	margin: 0;
+	width: 25%;
+}

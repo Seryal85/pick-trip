@@ -1,0 +1,32 @@
+.btn-sign{
+	border: 2px #c98b70 solid;
+	border-radius: 18px;
+	padding: 5px 15px;
+	font-size: 14px;
+	color: #c98b70;
+	font-weight: 500;
+	margin-right: 50px;
+	margin-left: 25px;
+}
+.btn-sign:active{
+	background-color: #a9725a; 
+	color: white;
+}
+.btn-sign:hover{
+	background-color: #c98b70;
+	color:white;
+}
+.navbar-brand.logo{
+	margin-left: 50px !important;
+	font-weight: 900;
+	color: black;
+	font-size: 28px;
+	font-family: 'Candal', sans-serif;
+}
+.question{
+	color: black;
+	font-weight: 900;
+}
+.navbar-peak-a-trip{
+	background: white;
+}

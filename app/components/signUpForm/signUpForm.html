@@ -1,0 +1,67 @@
+<form  method="post" class ="form-login" name = "signUpForm" role="sign-up" ng-submit = "signUp()">
+	<div class="row">
+	<h3 class="form-login-heading">Create FREE Account</h3>
+	<div class="form-group has-feedback" ng-class="{'has-error': signUpForm.email.$invalid&& signUpForm.email.$dirty}">
+		<label for="email">Email</label>
+		<input type="email" class="form-control input-lg"  id = "email" name="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" placeholder="Email" ng-model="user.email" required autofocus>
+		<div class = "help-block text-danger" ng-if="signUpForm.email.$dirty" ng-messages="signUpForm.email.$error" ng-messages-multiple>
+		<div ng-message="required">Your email address is required.</div>
+		<div ng-message="pattern">Your email address is invalid.</div>
+		</div>
+	</div>
+	<div class="form-group has-feedback" ng-class="{'has-error':signUpForm.password.$invalid && signUpForm.password.$dirty}">
+		<label for="psw">Password</label>
+		<input password-strength type="password" class="form-control input-lg" id = "pwd" name="password" placeholder="Password" ng-model="user.password" required>
+		<div class="help-block text-danger" ng-if="signUpForm.password.$dirty" ng-messages="signUpForm.password.$error">
+			<div ng-message="required">Password is required.</div>
+		</div>
+	</div>
+	<div class="form-group has-feedback" ng-class="{'has-error' : signUpForm.confirmPassword.$invalid && signUpForm. confirmPassword.$dirty}">
+		<input password-match="user.password" type="password" class="form-control input-lg" name="confirmPassword" placeholder="Password Confirmation" ng-model="confirmPassword">
+		<div class="help-block text-danger" ng-if="signUpForm.confirmPassword.$dirty" ng-messages="signUpForm.confirmPassword.$error">
+			<div ng-message="compareTo">Password must match.</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div  class = "strike">
+			<span>or</span>
+		</div>
+	</div>
+	<div class="form-group" align="center">
+		<p class="social">
+			<!--Facebook icon-->
+			<a href="http://facebook.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-facebook fa-stack-1x"></i>
+				</span>
+			</a>&nbsp; &nbsp; &nbsp;
+			<!--Twitter icon-->
+			<a href="http://twitter.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</a>&nbsp; &nbsp;&nbsp;
+			<!--Google+ icon-->
+			<a href="http://plus.google.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle-thin fa-stack-2x"></i>
+					<i class="fa fa-google-plus fa-stack-1x"></i>
+				</span>
+			</a>
+		</p>
+	</div>
+	<div class="form-group has-feedback">
+			<div align="center">
+			    <label class="pointer">
+			      <input type="checkbox" style="display:none;" name="conditions" ng-model="conditions" required><i class="fa fa-square-o fa-1-5x fa-v-align"></i><i class="fa fa-check-square-o fa-1-5x fa-v-align"></i><span class="log-check-font"> &nbsp; I have read, understand and agree to the Terms of Use</span>
+			    </label>
+			</div>
+	</div>
+	<div class="form-group">
+	<a ui-sref="personalize-sign-up">Personilaze Form</a>
+	</div>
+</div>
+	<button type="submit" ng-disabled = "signUpForm.$invalid" class="btn btn-block btn-lg login">Sign Up</button>
+</form>

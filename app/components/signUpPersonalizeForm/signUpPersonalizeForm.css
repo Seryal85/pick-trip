@@ -1,0 +1,215 @@
+
+.btn-back{
+	border: 2px #9d9d9d solid;
+	border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 16px;
+	color: #9d9d9d ;
+	font-weight: 500;
+	margin-right: 50px;
+	vertical-align: text-bottom;
+}
+
+.btn-back:active{
+	background-color: #60beb3;
+	color: white;
+}
+
+.btn-back:hover{
+	background-color: #9d9d9d;
+	color: white;
+}
+
+.custom.row{
+	padding: 20px 20px;
+    background: white;
+    margin-top: 30px;
+}
+.reset-left{
+	padding-left: 0;
+}
+.row-caption{
+	margin-top: 30px;
+}
+/*-------------------------------------------------*/
+label.btn span {
+  font-size: 18px ;
+}
+
+label input[type="radio"] ~ i.fa.fa-circle-o{
+    color: #c8c8c8;    display: inline;
+}
+label input[type="radio"] ~ i.fa.fa-dot-circle-o{
+    display: none;
+}
+label input[type="radio"]:checked ~ i.fa.fa-circle-o{
+    display: none;
+}
+label input[type="radio"]:checked ~ i.fa.fa-dot-circle-o{
+    color: #60beb3;    display: inline;
+}
+label:hover input[type="radio"] ~ i.fa {
+color: #60beb3;
+}
+
+label input[type="checkbox"] ~ i.fa.fa-square-o{
+    color: #c8c8c8;    
+    display: inline;
+}
+label input[type="checkbox"] ~ i.fa.fa-check-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+    color: #60beb3;
+    display: inline;
+}
+label:hover input[type="checkbox"] ~ i.fa {
+color: #60beb3;
+}
+
+
+div[data-toggle="buttons"] label.active{
+    color: black;
+}
+
+div[data-toggle="buttons"] label {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 2em;
+text-align: left;
+white-space: nowrap;
+vertical-align: top;
+cursor: pointer;
+background-color: none;
+border: 0px solid 
+#c8c8c8;
+border-radius: 3px;
+color: black;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+.btn-interest span{
+	vertical-align: top;
+}
+div[data-toggle="buttons"] label:hover {
+color: black;
+}
+
+div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+div[data-toggle="buttons"] label.btn-interest{
+padding: 5px 10px 0 10px;
+    border: 2px solid #c8c8c8;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-top: 25px;
+    color: #c8c8c8;
+}
+
+div[data-toggle="buttons"] label.btn-interest:hover {
+color: black;
+border-color: #60beb3;
+}
+
+div[data-toggle="buttons"] label.btn-interest.active{
+    color: black;
+    border-color: #60beb3;
+}
+
+.img-group{
+    position: absolute;
+    top: 65%;
+    right: 29%;
+}
+.cloud{
+    position: absolute;
+    left: 40%;
+    bottom: 42%;
+}
+.img-group a{
+	color: white;
+    font-size: 12px;
+}
+
+.img-group a:hover{
+	    color: white;
+    text-decoration: none;
+
+}
+.custom.row.second
+{
+	margin-top:20px;
+	padding-right: 40px;
+}
+.border-bt{
+	border-bottom: 1px #e7e7e7 solid;
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.custom.row.second span{
+	border-bottom: 5px solid white;
+	font-weight: bold;
+    font-size: 18px;
+}
+.custom.row.button-sign-in{
+	padding: 0;
+	margin-bottom: 25px;
+}
+.button-sign-in .btn{
+	background: #60beb3;
+	color: white;
+	border-radius: 2px;
+}
+.caption{
+	font-size: 20px;
+	font-weight: bold;
+}
+.caption span{
+	vertical-align: -webkit-baseline-middle;
+}
+.row.interest{
+	border: 1px solid #c8c8c8;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+.caption-interest{
+	font-size: 16px;
+    font-weight: bold;
+    border-bottom: 3px solid white;
+    padding-right: 5px;
+}
+.clear-padding{
+	padding: 0;
+}
+.input-group.custom-interest{
+	padding: 25px 0 0 0;
+}
+.btn.custom-add{
+	border-radius: 0 20px 20px 0;
+    background-color: white;
+    border: 1px solid #c8c8c8;
+    border-left: 0;
+    color: #60beb3;
+}
+.form-control.custom-input-interest{
+	border-radius: 20px 0 0 20px!important;
+}

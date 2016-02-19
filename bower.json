@@ -1,0 +1,41 @@
+{
+  "name": "pick-a-trip",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Serhii Yablonovsyi <seryal85@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "jquery": "~2.2.0",
+    "angular-ui-router": "~0.2.18",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "~4.5.0",
+    "satellizer": "~0.13.4",
+    "angular-messages": "~1.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "**/bootstrap.css",
+        "**/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "**/font-awesome.css",
+        "./fonts/*.*"
+      ]
+    }
+  }
+}

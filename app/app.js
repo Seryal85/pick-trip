@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module('app',['ui.router', 'satellizer', 'ngMessages', 'app.navBar', 'app.footerBar', 'app.loginForm', 'app.signUpForm'])
+	angular.module('app',['ui.router', 'satellizer', 'ngMessages','ngFileUpload', 'app.navBar', 'app.footerBar', 'app.loginForm', 'app.signUpForm', 'app.signUpPersonillizeForm'])
 	.config(function($stateProvider, $urlRouterProvider, $authProvider){
 
 		$urlRouterProvider.otherwise("/")
@@ -49,7 +49,11 @@
 				url: "/personalize-sign-up",
 				views : {
 					"form" : {
-							templateUrl : "components/signUpPersonalizeForm/signUpPersonalizeForm.html"
+							templateUrl : "components/signUpPersonalizeForm/signUpPersonalizeForm.html",
+							controller : 'SignUpPersonillizeCtrl',
+							resolve: {
+									skipIfLoggedIn: skipIfLoggedIn
+							}
 					},
 					"navigate":{
 						templateUrl: "components/navBar/login.html"

@@ -1,4 +1,4 @@
-	<form class ="form-sign-up-2" name = "signUpForm2" role="sign-up-2" ng-submit = "submit(signUpForm2)">
+	<form class ="form-sign-up-2" name = "signUpForm2" role="sign-up-2" ng-submit = "submit()">
 
 	<div class="row row-caption">
 		<div class="col-xs-4 reset-left">
@@ -14,11 +14,19 @@
 	</div>	
 	<div class="custom row">
 		<div class="col-xs-2">
-		<img src="img/avatar.png" alt="avatar">
-		<div class="img-group">
-		<i class="fa fa-cloud-upload fa-lg  fa-inverse cloud"></i><br>
-		<a href="#">Upload Avatar</a>
-		</div>
+				
+			  
+			  <!-- ngf-drop ng-model="files" ngf-model-invalid="invalidFiles" ng-model-options="modelOptionsObj" ngf-multiple="multiple" ngf-pattern="pattern" ngf-accept="acceptSelect" ng-disabled="disabled" ngf-capture="capture" ngf-drag-over-class=" dragOverClassObj" ngf-validate="validateObj" ngf-resize="resizeObj" ngf-resize-if="resizeIfFn($file, $width, $height)" ngf-dimensions="dimensionsFn($file, $width, $height)" ngf-duration="durationFn($file, $duration)" ngf-keep="keepDistinct ? 'distinct' : keep" ngf-fix-orientation="orientation" ngf-allow-dir="allowDir"  ngf-drop-available="dropAvailable" --> 
+			  <div ngf-select ngf-drop ng-model="files"
+			  class="drop-box">
+              <img ngf-src="!files[0].$error && files[0]">
+                Select File
+			  </div>
+<!-- 				<img src="img/avatar.png" alt="avatar">
+				<div class="img-group">
+					<i class="fa fa-cloud-upload fa-lg  fa-inverse cloud"></i><br>
+					<a href="#">Upload Avatar</a>
+				</div> -->
 		</div>
 		 <div class="col-xs-4">
 		 	<div class="form-group">

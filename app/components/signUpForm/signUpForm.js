@@ -142,6 +142,7 @@
         })
         .catch(function(response) {
           $log.error(response.data.message);
+          $location.path('/personalize-sign-up');
         });
     };
   })

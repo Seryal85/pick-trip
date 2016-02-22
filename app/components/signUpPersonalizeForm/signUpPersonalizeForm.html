@@ -17,16 +17,18 @@
 				
 			  
 			  <!-- ngf-drop ng-model="files" ngf-model-invalid="invalidFiles" ng-model-options="modelOptionsObj" ngf-multiple="multiple" ngf-pattern="pattern" ngf-accept="acceptSelect" ng-disabled="disabled" ngf-capture="capture" ngf-drag-over-class=" dragOverClassObj" ngf-validate="validateObj" ngf-resize="resizeObj" ngf-resize-if="resizeIfFn($file, $width, $height)" ngf-dimensions="dimensionsFn($file, $width, $height)" ngf-duration="durationFn($file, $duration)" ngf-keep="keepDistinct ? 'distinct' : keep" ngf-fix-orientation="orientation" ngf-allow-dir="allowDir"  ngf-drop-available="dropAvailable" --> 
-			  <div ngf-select ngf-drop ng-model="files"
-			  class="drop-box">
-              <img ngf-src="!files[0].$error && files[0]">
-                Select File
+			  <div ngf-select ngf-drop ng-model="file">
+				  <div class="preview">
+				  <img src="img/avatar.png" alt="avatar" ng-hide="avatarVisible">
+	              <img ngf-src="!file.$error && file" >
+		              <div class="img-group">
+							<i class="fa fa-cloud-upload fa-lg  fa-inverse cloud"></i><br>
+							<a href="#">Upload Avatar</a>
+					  </div>
+	              </div>
 			  </div>
-<!-- 				<img src="img/avatar.png" alt="avatar">
-				<div class="img-group">
-					<i class="fa fa-cloud-upload fa-lg  fa-inverse cloud"></i><br>
-					<a href="#">Upload Avatar</a>
-				</div> -->
+			<!-- <img src="img/avatar.png" alt="avatar"> -->
+				
 		</div>
 		 <div class="col-xs-4">
 		 	<div class="form-group">

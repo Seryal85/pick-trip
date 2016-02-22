@@ -23,7 +23,9 @@
     "font-awesome": "~4.5.0",
     "satellizer": "~0.13.4",
     "angular-messages": "~1.5.0",
-    "ng-file-upload": "~12.0.1"
+    "ng-file-upload": "~12.0.1",
+    "angular-bootstrap-lightbox": "~0.10.0",
+    "ng-img-crop": "~0.3.2"
   },
   "overrides": {
     "bootstrap": {

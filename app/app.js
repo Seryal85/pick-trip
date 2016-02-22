@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module('app',['ui.router', 'satellizer', 'ngMessages','ngFileUpload', 'app.navBar', 'app.footerBar', 'app.loginForm', 'app.signUpForm', 'app.signUpPersonillizeForm'])
+	angular.module('app',['ui.router', 'satellizer', 'ngMessages','ngFileUpload','bootstrapLightbox', 'ngImgCrop','app.navBar', 'app.footerBar', 'app.loginForm', 'app.signUpForm', 'app.signUpPersonillizeForm'])
 	.config(function($stateProvider, $urlRouterProvider, $authProvider){
 
 		$urlRouterProvider.otherwise("/")

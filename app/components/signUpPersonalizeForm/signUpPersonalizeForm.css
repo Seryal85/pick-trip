@@ -221,3 +221,8 @@ div[data-toggle="buttons"] label.btn-interest.active{
     padding: 50px 10px;
     margin-left: 10px;
 }
+.preview img{
+    max-height: 154px;
+    max-width: 154px;
+    border-radius: 124px;
+}

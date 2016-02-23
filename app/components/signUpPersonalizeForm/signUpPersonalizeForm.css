@@ -131,7 +131,9 @@ div[data-toggle="buttons"] label.btn-interest.active{
     position: absolute;
     top: 65%;
     right: 29%;
+    cursor: pointer;
 }
+
 .cloud{
     position: absolute;
     left: 40%;

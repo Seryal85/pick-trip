@@ -1,4 +1,4 @@
-	<form class ="form-sign-up-2" name = "signUpForm2" role="sign-up-2" ng-submit = "submit()">
+	<form class ="form-sign-up-2" name = "signUpPersonalizeForm" role="sign-up-2" ng-submit = "singUpPersonalize()">
 
 	<div class="row row-caption">
 		<div class="col-xs-4 reset-left">
@@ -31,9 +31,12 @@
 				
 		</div>
 		 <div class="col-xs-4">
-		 	<div class="form-group">
+		 	<div class="form-group"  ng-class="{'has-error':signUpPersonalizeForm.name.$invalid && signUpPersonalizeForm.name.$dirty}">
 		 	<label for="name">Name</label>
-			<input type="text" class="form-control input-lg" id="name" placeholder="Name">
+			<input type="text" class="form-control input-lg" id="name" name="name" ng-model= "user.name" placeholder="Name" required autofocus>
+			<div class="help-block text-danger" ng-if="signUpPersonalizeForm.name.$dirty" ng-messages="signUpPersonalizeForm.name.$error">
+			<div ng-message="required">Name is required.</div>
+		   </div>
 			</div>
 			<div class="form-group">
 			<label for="date">Birth Date</label>
@@ -55,9 +58,12 @@
 			</div>
 		 </div>
 		 <div class="col-xs-3">
-		 	<div class="form-group">
+		 	<div class="form-group" ng-class="{'has-error':signUpPersonalizeForm.lastName.$invalid && signUpPersonalizeForm.lastName.$dirty}">
 		 	 <label for="last-name">Last Name</label>
-		 	 <input type="text" class="form-control input-lg" id="last-name" placeholder="Last Name">
+		 	 <input type="text" class="form-control input-lg" id="last-name" name="lastName" placeholder="Last Name" ng-model="user.lastName" required>
+		 	 <div class="help-block text-danger" ng-if="signUpPersonalizeForm.lastName.$dirty" ng-messages="signUpPersonalizeForm.lastName.$error">
+			<div ng-message="required">Last Name is required.</div>
+		   </div>
 		 	</div>
 		 	<div class="form-group">
 		 	 <label for="location">Location</label>
@@ -164,6 +170,6 @@
 </div>
 
 	<div class="custom row button-sign-in">
-	<button type="submit" class="btn btn-block btn-lg login">Sign Up and Start</button>	
+	<button type="submit" ng-disabled = "signUpPersonalizeForm.$invalid" class="btn btn-block btn-lg login">Sign Up and Start</button>	
 	</div>
 	</form>

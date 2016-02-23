@@ -37,7 +37,10 @@
     "font-awesome": {
       "main": [
         "**/font-awesome.css",
-        "./fonts/*.*"
+              "fonts/fontawesome-webfont.eot",
+              "fonts/fontawesome-webfont.woff",
+              "fonts/fontawesome-webfont.ttf",
+              "fonts/fontawesome-webfont.svg"
       ]
     }
   }

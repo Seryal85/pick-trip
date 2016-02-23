@@ -22,11 +22,19 @@ pipes.orderedVendorScripts = function(){
 	return plugins.order(['jquery.js','angular.js']);
 };
 pipes.builtVendorScriptsDev = function(){
-	return gulp.src(bowerFiles())
+	return gulp.src(bowerFiles('**/*.js'))
 				.pipe(gulp.dest(paths.distDev + '/bower_components'));
 };
 
+pipes.builtVendorCSSDev = function(){
+	return gulp.src(bowerFiles('**/*.css'))
+				.pipe(gulp.dest(paths.distDev + '/bower_components/css'));
+};
 
+pipes.buildVendorFontsDev = function(){
+	return gulp.src(bowerFiles(['**/*.eot','**/*.svg','**/*.ttf','**/*.woff','**/*.woff2']))
+				.pipe(gulp.dest(paths.distDev + '/bower_components/fonts'));
+};
 
 pipes.builtAppScriptsDev = function(){
 	return gulp.src(paths.scripts)
@@ -55,6 +63,10 @@ pipes.buildIndexDev = function() {
 	var orderVenderScripts = pipes.builtVendorScriptsDev()
 		.pipe(pipes.orderedVendorScripts());
 	
+	var orderVenderCSS = pipes.builtVendorCSSDev();
+
+	var orderVenderFonts = pipes.buildVendorFontsDev();
+	
 	var orderAppScripts = pipes.builtAppScriptsDev();
 
 	var appStyles = pipes.builtStylesDev();
@@ -63,6 +75,8 @@ pipes.buildIndexDev = function() {
 	.pipe(gulp.dest(paths.distDev))
 	.pipe(plugins.inject(orderVenderScripts, {relative : true, name : 'bower'}))
 	.pipe(plugins.inject(orderAppScripts, {relative : true}))
+	.pipe(plugins.inject(orderVenderCSS, {relative : true}))
+	.pipe(plugins.inject(orderVenderFonts, {relative : true}))
 	.pipe(plugins.inject(appStyles, {relative : true}))
 	.pipe(gulp.dest(paths.distDev));
 };

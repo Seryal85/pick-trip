@@ -22,11 +22,10 @@
 	$scope.$watch('file', function (file) {
     $scope.avatarVisible = false;
     if (file != null) {
-        $log.debug('file != null');
+        $log.debug(file);
         $scope.file = file;
         $scope.errorMsg = null;
         (function (f) {
-          $log.debug('Update');
           $scope.upload(f, true);
           $scope.avatarVisible = true;
         })(file);
@@ -35,7 +34,6 @@
   });
 
 	  $scope.upload = function(file, resumable) {
-	    $log.debug('$scope.upload');
 	    $scope.errorMsg = null;
 	    if ($scope.howToSend === 1) {
 	      uploadUsingUpload(file, resumable);
@@ -65,10 +63,9 @@
 
 	    file.upload.then(function (response) {
 	      $timeout(function () {
-	        $scope.avatarVisible = true;
 	        file.result = response.data;
-	        $log.debug(file);        
-	        //Lightbox.openModal([file.$ngfBlobUrl], 0);
+	        Lightbox.openModal([file.$ngfBlobUrl], 0);
+	        $log.debug($scope);
 	      });
 	    }, function (response) {
 	      if (response.status > 0)
@@ -84,6 +81,11 @@
  	 }
 
 
+	}])
+	.controller('LightboxCtrl', ['$scope', 'Lightbox','$log', function ($scope, Lightbox,$log) {
+		    $scope.myImage=Lightbox.imageUrl;
+    		$scope.myCroppedImage='';
+    		$log.debug($scope);
 	}])
 
 })();

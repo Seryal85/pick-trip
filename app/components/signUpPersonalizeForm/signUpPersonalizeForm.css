@@ -226,3 +226,10 @@ div[data-toggle="buttons"] label.btn-interest.active{
     max-width: 154px;
     border-radius: 124px;
 }
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
+  margin : 0 auto;
+}

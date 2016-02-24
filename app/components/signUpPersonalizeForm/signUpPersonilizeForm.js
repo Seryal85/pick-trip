@@ -22,8 +22,8 @@
 	$scope.$watch('file', function (file) {
     $scope.avatarVisible = false;
     if (file != null) {
-        $log.debug(file);
         $scope.file = file;
+        $log.debug(file.$ngfDataUrl);
         $scope.errorMsg = null;
         (function (f) {
           $scope.upload(f, true);
@@ -50,6 +50,8 @@
   		};
 
 	  function uploadUsingUpload(file, resumable) {
+	    $log.debug(file);
+
 	    file.upload = Upload.upload({
 	      url: 'https://angular-file-upload-cors-srv.appspot.com/upload' + $scope.getReqParams(),
 	      resumeSizeUrl: resumable ? 'https://angular-file-upload-cors-srv.appspot.com/upload?name=' + encodeURIComponent(file.name) : null,
@@ -57,15 +59,15 @@
 	      headers: {
 	        'optional-header': 'header-value'
 	      },
-	      data: {username: $scope.username, file: file}
+	      data: {file: file}
 	    });
 	    
 
 	    file.upload.then(function (response) {
 	      $timeout(function () {
-	        file.result = response.data;
-	        Lightbox.openModal([file.$ngfBlobUrl], 0);
-	        $log.debug($scope);
+	        //file.result = response.data;
+	        $log.debug(response.data);
+	        //Lightbox.openModal([file.$ngfBlobUrl], 0);
 	      });
 	    }, function (response) {
 	      if (response.status > 0)
@@ -82,10 +84,27 @@
 
 
 	}])
-	.controller('LightboxCtrl', ['$scope', 'Lightbox','$log', function ($scope, Lightbox,$log) {
+	.controller('LightboxCtrl', ['$scope', 'Lightbox', '$log', '$timeout',  function ($scope, Lightbox,$log, $timeout) {
 		    $scope.myImage=Lightbox.imageUrl;
     		$scope.myCroppedImage='';
     		$log.debug($scope);
-	}])
+ //    		$scope.upload = function (dataUrl) {
+	// 		        Upload.upload({
+	// 		            url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+	// 		            data: {
+	// 		                file: Upload.dataUrltoBlob(dataUrl)
+	// 		            },
+	// 		        }).then(function (response) {
+	// 		            $timeout(function () {
+	// 		                $scope.file = response.data;
+	// 		            });
+	// 		        }, function (response) {
+	// 		            if (response.status > 0) $scope.errorMsg = response.status 
+	// 		                + ': ' + response.data;
+	// 		        }, function (evt) {
+	// 		            $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+	// 		        });
+ //   			 }
+ }])
 
 })();

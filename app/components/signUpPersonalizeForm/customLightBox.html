@@ -3,12 +3,11 @@
     <button class=close aria-hidden=true ng-click=$dismiss()>×</button>
     </div>
     <div class=lightbox-image-container>
-<!--     <img lightbox-src={{Lightbox.imageUrl}}>
-    <div class="cropArea"> -->
      <div class="cropArea">
     <img-crop image="myImage" result-image="myCroppedImage" change-on-fly="true"></img-crop>
      </div>
 	<div>Cropped Image:</div>
   	<div><img ng-src="{{myCroppedImage}}" /></div>
     </div>
+    <!-- <button ng-click="upload(myCroppedImage)">Submit</button>  -->
 </div>

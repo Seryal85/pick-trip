@@ -13,24 +13,71 @@
 		    };
 		  };
 	})
-	.controller('SignUpPersonillizeCtrl', [ '$scope', '$http', '$timeout','$log','Upload', 'Lightbox', function($scope, $http, $timeout, $log, Upload, Lightbox){
+	.factory('Data', function(){
+    var data =
+        {
+            file: undefined,
+            blob: undefined
+        };
+    
+    return {
+        getFile: function () {
+            return data.file;
+        },
+        setFile: function (file) {
+            data.file = file;
+        },
+        getBlob: function () {
+            return data.blob;
+        },
+        setBlob: function (blob) {
+            data.blob = blob;
+        }
+    };
+	})	
+	.controller('SignUpPersonillizeCtrl', [ '$scope', '$http', '$timeout','$log','Upload', 'Lightbox', 'Data', function($scope, $http, $timeout, $log, Upload, Lightbox, Data){
 
 	$scope.howToSend = 1;
 	$scope.avatarVisible =false;
+	$scope.fileSrc = '';
 	// $scope.file = null;
+	
 
-	$scope.$watch('file', function (file) {
+	$scope.$watch(function () { return Data.getBlob(); }, function (newValue, oldValue) {
+        if (newValue !== oldValue) {
+        	$log.debug('watcher 2')
+        	$log.debug(oldValue);
+        	$log.debug(newValue);
+        	$scope.fileSrc = Data.getBlob();
+        }
+    });
+
+	$scope.$watch('file', function (newFile, oldFile) {
+    $log.debug('watcher 1')
     $scope.avatarVisible = false;
-    if (file != null) {
-        $scope.file = file;
-        $log.debug(file.$ngfDataUrl);
-        $scope.errorMsg = null;
-        (function (f) {
-          $scope.upload(f, true);
-          $scope.avatarVisible = true;
-        })(file);
+    if(newFile !== oldFile)
+    {
+    	if (newFile != null) {    	
+    	$scope.avatarVisible = true;
+    	$log.debug(oldFile);
+    	$log.debug(newFile);
+    	Data.setFile(newFile);               	    
+    	//$scope.file = Data.getFile();   	
+	    Lightbox.openModal([''], 0);	        
+	      
+        
+        
+        
+        //$scope.file = file;      
+        
+        //$scope.errorMsg = null;
+        // (function (f) {
+        //   $scope.upload(f, true);
+        //   $scope.avatarVisible = true;
+        // })(file);
 
-    }
+    	}
+	}
   });
 
 	  $scope.upload = function(file, resumable) {
@@ -50,8 +97,7 @@
   		};
 
 	  function uploadUsingUpload(file, resumable) {
-	    $log.debug(file);
-
+	    
 	    file.upload = Upload.upload({
 	      url: 'https://angular-file-upload-cors-srv.appspot.com/upload' + $scope.getReqParams(),
 	      resumeSizeUrl: resumable ? 'https://angular-file-upload-cors-srv.appspot.com/upload?name=' + encodeURIComponent(file.name) : null,
@@ -66,8 +112,8 @@
 	    file.upload.then(function (response) {
 	      $timeout(function () {
 	        //file.result = response.data;
-	        $log.debug(response.data);
-	        //Lightbox.openModal([file.$ngfBlobUrl], 0);
+	        //$log.debug(response.data);
+	        
 	      });
 	    }, function (response) {
 	      if (response.status > 0)
@@ -84,27 +130,27 @@
 
 
 	}])
-	.controller('LightboxCtrl', ['$scope', 'Lightbox', '$log', '$timeout',  function ($scope, Lightbox,$log, $timeout) {
-		    $scope.myImage=Lightbox.imageUrl;
+	.controller('LightboxCtrl', ['$scope', '$log', '$timeout','Upload', 'Data', function ($scope, $log, $timeout, Upload,Data) {
+		    
+    		var URL = window.URL || window.webkitURL;
+    		var srcTmp = URL.createObjectURL(Data.getFile());
+        	$scope.myImage=srcTmp;
     		$scope.myCroppedImage='';
-    		$log.debug($scope);
- //    		$scope.upload = function (dataUrl) {
-	// 		        Upload.upload({
-	// 		            url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-	// 		            data: {
-	// 		                file: Upload.dataUrltoBlob(dataUrl)
-	// 		            },
-	// 		        }).then(function (response) {
-	// 		            $timeout(function () {
-	// 		                $scope.file = response.data;
-	// 		            });
-	// 		        }, function (response) {
-	// 		            if (response.status > 0) $scope.errorMsg = response.status 
-	// 		                + ': ' + response.data;
-	// 		        }, function (evt) {
-	// 		            $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
-	// 		        });
- //   			 }
+        	$scope.upload = function (dataUrl) {
+        	 	//$log.debug(dataUrl);
+        	 	//$log.debug(Upload.urlToBlob(dataUrl));
+        	 	Data.setBlob(dataUrl);
+        	 	Upload.urlToBlob(dataUrl).then(function(blob) {
+        	 		
+        	 		var file = new File([blob], "croped");
+        	 		//$log.debug(blob);
+        	 		 Data.setFile(file);
+        	 		 //$log.debug(Data);
+        	 	});
+        	}
+        	//$log.debug();
+    		//$log.debug(Data.getFile());
+    		// $log.debug($scope.myCroppedImage);
  }])
 
 })();
